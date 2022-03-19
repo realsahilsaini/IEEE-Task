@@ -1,4 +1,4 @@
-# IEEE-Task: Landing Page 
+# Landing Page 
 ---
 
 ### 🧩Tech stack used:
