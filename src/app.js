@@ -30,6 +30,7 @@ app.post("/register", async (req, res) =>{
 
         if(password === cpassword){
 
+
             const registerParticipant = new Register({
                 firstname :req.body.firstname, 
                 lastname :req.body.lastname, 
@@ -38,7 +39,8 @@ app.post("/register", async (req, res) =>{
                 password:password,
                 confirmpassword:cpassword, 
                 gender:req.body.gender
-            })
+            })  
+            
 
            const registered = await registerParticipant.save();
            res.status(201).render("index");
