@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-require("./db/conn");
+// require("./db/conn");
 const Register = require("./models/registers")
 
 const port = process.env.PORT || 3000;
@@ -45,9 +45,14 @@ app.post("/register", async (req, res) =>{
             })  
             
            const registered = await registerParticipant.save();
+
+           if(registered) res.status(200).redirect("/");
+           
+        }else{
            res.status(201).render("index");
         } 
         else {
+
             res.send("password are not matching")
         }
         
